@@ -41,7 +41,7 @@ if uploaded_file is not None:
         # Reshape the data for a 10x10 heatmap grid
         heatmap_data = heatmap_df.pivot_table(values='Total Bet Amount', 
                                               index=pd.cut(heatmap_df['Number'], bins=np.arange(1, 102, 10), labels=range(1, 11)),
-                                              columns=pd.cut(heatmap_df['Number'], bins=np.arange(1, 102, 10), labels=range(1, 11))))
+                                              columns=pd.cut(heatmap_df['Number'], bins=np.arange(1, 102, 10), labels=range(1, 11)))
 
         # Plot the heatmap
         fig = px.imshow(heatmap_data, 
